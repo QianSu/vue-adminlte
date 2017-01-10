@@ -204,8 +204,10 @@
       <ul class="sidebar-menu">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <router-link to="/todolist" tag='li' class="active">
+        <a href="javascript:;"><i class="fa fa-link"></i> <span>小列子</span></a>
+        </router-link> 
+        <router-link to="/test/nihao" tag='li'><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></router-link> 
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
@@ -215,6 +217,39 @@
           <ul class="treeview-menu">
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-share"></i> <span>Multilevel</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: none;">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+            <li class="">
+              <a href="#"><i class="fa fa-circle-o"></i> Level One
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu" style="display: none;">
+                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                <li class="">
+                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu" style="display: none;">
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>
       </ul>
@@ -239,7 +274,9 @@
 
     <!-- Main content -->
     <section class="content">
-
+     <h2>{{$route.params.username}}</h2>
+    <h2>{{$route.params.id}}</h2>
+     <router-view></router-view>
       <!-- Your Page Content Here -->
 
     </section>
@@ -268,28 +305,28 @@
     <div class="tab-content">
       <!-- Home tab content -->
       <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <h3 class="control-sidebar-heading">最近的活动</h3>
         <ul class="control-sidebar-menu">
           <li>
             <a href="javascript::;">
               <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
               <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                <h4 class="control-sidebar-subheading">兰登的生日</h4>
 
-                <p>Will be 23 on April 24th</p>
+                <p>将于4月24日23</p>
               </div>
             </a>
           </li>
         </ul>
         <!-- /.control-sidebar-menu -->
 
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        <h3 class="control-sidebar-heading">任务进度</h3>
         <ul class="control-sidebar-menu">
           <li>
             <a href="javascript::;">
               <h4 class="control-sidebar-subheading">
-                Custom Template Design
+              自定义模板的设计
                 <span class="pull-right-container">
                   <span class="label label-danger pull-right">70%</span>
                 </span>
@@ -311,16 +348,16 @@
       <!-- Settings tab content -->
       <div class="tab-pane" id="control-sidebar-settings-tab">
         <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
+          <h3 class="control-sidebar-heading">一般设置</h3>
 
           <div class="form-group">
             <label class="control-sidebar-subheading">
-              Report panel usage
+             面板的使用报告
               <input type="checkbox" class="pull-right" checked>
             </label>
 
             <p>
-              Some information about this general settings option
+             有关此一般设置选项的一些信息
             </p>
           </div>
           <!-- /.form-group -->
