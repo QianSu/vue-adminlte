@@ -10,13 +10,13 @@ console.log(Test)
  	},
  	{
  		path:'/test/:username',component:Test
- 	},
- 	{
- 		path:'*',redirect:'/todolist'
- 	},
- 	{
- 		path:'/',redirect:'/todolist'
  	}
+ 	// {
+ 	// 	path:'*',redirect:'/todolist'
+ 	// },
+ 	// {
+ 	// 	path:'/',redirect:'/todolist'
+ 	// }
 
  ];
 
