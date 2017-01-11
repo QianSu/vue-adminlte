@@ -6,17 +6,25 @@ console.log(Test)
 
  export default[
  	{
- 		path:'/:id',component:TodoList
+ 		path:'/:id',
+ 		meta: {
+      		title: '首页'
+   		 },
+    	component:TodoList
  	},
  	{
- 		path:'/test/:username',component:Test
+ 		path:'/test/:username',
+		meta: {
+      		title: '测试'
+   		 },
+ 		component:Test
+ 	},
+ 	{
+ 		path:'*',redirect:'/todolist'
+ 	},
+ 	{
+ 		path:'/',redirect:'/todolist'
  	}
- 	// {
- 	// 	path:'*',redirect:'/todolist'
- 	// },
- 	// {
- 	// 	path:'/',redirect:'/todolist'
- 	// }
 
  ];
 

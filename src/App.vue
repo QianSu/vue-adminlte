@@ -274,9 +274,9 @@
 
     <!-- Main content -->
     <section class="content">
-     <h2>{{$route.params.username}}</h2>
+  
     <h2>{{$route.params.id}}</h2>
-     <router-view></router-view>
+     <router-view v-wechat-title="$route.meta.title"></router-view>
       <!-- Your Page Content Here -->
 
     </section>
